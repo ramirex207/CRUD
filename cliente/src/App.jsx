@@ -1,21 +1,19 @@
-import { BrowserRouter, Router, Switch, Route } from 'react-router-dom';
-import UsersList from './componets/UserDetails';
-import UserDetails from './componets/Userlist';
-import './App.css'
+import './sass/App.scss'
+import { Login } from './componets/Login'
+import NavBar from './componets/NavBar'
+import { Register } from './componets/Register'
 
 function App() {
-  
-
   return (
     <>
-
-      <Router>
-        <Switch>
-          <Route exact path="/" component={UsersList} />
-          <h2>hola mundo</h2>
-          <Route exact path="/users/:id" component={UserDetails} />
-        </Switch>
-    </Router>
+    <NavBar/>
+    <div className="form">
+      <Register></Register>
+    </div>
+    <div className="form">
+      <Login></Login>
+      
+    </div>
     </>
   )
 }

@@ -1,0 +1,66 @@
+@use 'variables' as v;
+.navbar{
+    background-color: v.$primaryColor2;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__circle{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: v.$primaryColor2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 100%;
+            height: 80%;
+        }
+    }
+    &_container{
+
+        &_ul{
+            display: flex;
+            list-style: none;
+            &_li{
+                width: 135px;
+                margin: 0 10px;
+                &_botton{
+                    &.op{
+                        background: v.$primaryColor2;
+                        border: 1px solid v.$primaryColor1;
+                        color: v.$primaryColor3;
+                        transition: all .3s ease;
+                    }
+                    width: 100px;
+                    background: v.$primaryColor4;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    vertical-align: top;
+                    border: none;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    transition: all .3s ease;
+                    height: 40px;
+                    width: 100%;
+                    text-decoration: none;
+                    color: v.$primaryColor1;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    cursor: pointer;
+
+                    &:hover{
+                    background: v.$primaryColor1;
+                    color: v.$primaryColor3;
+                    font-size: 1.3rem;
+                    transition: all .3s ease;
+                    }
+                        
+                }
+            }
+        }
+    }
+}

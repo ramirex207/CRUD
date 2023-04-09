@@ -4,10 +4,11 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const mongoURI = 'mongodb://127.0.0.1:27017/myapp';
-const port = 3000;
+const port = 5000;
 
 const userRouter = require('./routes/userRoutes');
 const productRouter = require ('./routes/productRoutes');
+const saleRouter = require ('./routes/salesRoutes');
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(bodyParser.json());
 
 app.use('/api/users', userRouter);
 app.use('/api/products', productRouter);
+app.use('/api/sales', saleRouter);
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
