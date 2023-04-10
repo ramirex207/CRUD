@@ -1,5 +1,12 @@
 @use 'variables' as v;
+.register__container{
+    background-color: v.$primaryColor3;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
 .register{
+    width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;

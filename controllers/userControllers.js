@@ -5,12 +5,12 @@ const User = require('../models/user');
 async function createUser(req, res) {
   try {
     
-    const { name, email, password } = req.body;
+    const { name, email, password,rol,Ci,celular} = req.body;
     console.log(req.body);
-    if (!name || !email || !password) {
-      return res.status(400).json({ message: 'Missing required fields' });
+    if (!name || !email || !password || !rol || !Ci || !celular) {
+      return res.status(400).json({ message: 'Faltan los campos requeridos' });
     }
-    const user = new User({ name, email, password });
+    const user = new User({ name, email, password,rol,Ci,celular });
     await user.save();
     res.status(201).json(user);
   } catch (error) {
@@ -44,8 +44,8 @@ async function getUser(req, res) {
 
 async function updateUser(req, res) {
   try {
-    const { name, email, password } = req.body;
-    if (!name || !email || !password) {
+    const { name, email, password, rol,Ci,celular } = req.body;
+    if (!name || !email || !password || !rol || !Ci || !celular) {
       return res.status(400).json({ message: 'Missing required fields' });
     }
     const user = await User.findById(req.params.id);
@@ -55,6 +55,9 @@ async function updateUser(req, res) {
     user.name = name;
     user.email = email;
     user.password = password;
+    user.rol = rol;
+    user.Ci = Ci;
+    user.celular = celular;
     await user.save();
     res.json(user);
   } catch (error) {

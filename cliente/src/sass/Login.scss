@@ -1,5 +1,7 @@
 @use 'variables' as v;
 .login{
+
+    width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,6 +45,7 @@
             padding:20px;
             padding-bottom: 30px;
             input{
+                
                 height: 30px;
                 background: none;
                 border-radius: 3px;
@@ -50,8 +53,11 @@
                 color: #fff;
                 cursor: pointer;
                 transition: all .3s ease;
+                &::placeholder{
+                    text-align: center;
+                }
                 &:hover{
-                    border: 1px solid v.$primaryColor1;
+                    border: 2px solid v.$primaryColor1;
                 }
             }
         }
@@ -79,4 +85,13 @@
 
         
     }
+}
+.login__container{
+    margin-top: 10%;
+    background-color: v.$primaryColor3;
+    width: 100%;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
